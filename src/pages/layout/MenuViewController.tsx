@@ -3,11 +3,10 @@ import {useLayoutContext} from "src/pages/layout/LayoutContext";
 import {diContainer, TYPES} from "src/core/config";
 import {AuthenticationService} from "src/core/services/authentication";
 import {useLocation, useNavigate} from "react-router-dom";
-import {DASHBOARD_ENDPOINT, METRICS_ENDPOINT, SETTINGS_ENDPOINT, USERS_ENDPOINT} from "src/shared";
+import {DASHBOARD_ENDPOINT, SETTINGS_ENDPOINT, USERS_ENDPOINT} from "src/shared";
 
 export type MenuViewController = {
     onDashboardClick: (event: React.FormEvent<HTMLButtonElement>) => void,
-    onMetricsClick: (event: React.FormEvent<HTMLButtonElement>) => void,
     onUsersClick: (event: React.FormEvent<HTMLButtonElement>) => void,
     onSettingsClick: (event: React.FormEvent<HTMLButtonElement>) => void,
     onLogOutClick: (event: React.FormEvent<HTMLButtonElement>) => void,
@@ -17,7 +16,6 @@ export type MenuViewController = {
 
 export enum SelectedItem {
     USERS,
-    METRICS,
     DASHBOARD,
     SETTINGS
 }
@@ -29,10 +27,6 @@ const useMenuViewController: () => MenuViewController = () => {
 
     const onDashboardClick: (event: React.FormEvent<HTMLButtonElement>) => void = useCallback(() => {
         navigate(DASHBOARD_ENDPOINT)
-    }, [navigate])
-
-    const onMetricsClick: (event: React.FormEvent<HTMLButtonElement>) => void = useCallback(() => {
-        navigate(METRICS_ENDPOINT)
     }, [navigate])
 
     const onUsersClick: (event: React.FormEvent<HTMLButtonElement>) => void = useCallback(() => {
@@ -57,15 +51,12 @@ const useMenuViewController: () => MenuViewController = () => {
                 return SelectedItem.DASHBOARD;
             case USERS_ENDPOINT:
                 return SelectedItem.USERS;
-            case METRICS_ENDPOINT:
-                return SelectedItem.METRICS;
             default:
                 return undefined;
         }
     }, [pathname])
     return {
         onDashboardClick: onDashboardClick,
-        onMetricsClick: onMetricsClick,
         onUsersClick: onUsersClick,
         onSettingsClick: onSettingsClick,
         onLogOutClick: onLogOutClick,

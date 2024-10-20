@@ -29,10 +29,6 @@ export function Menu() {
                                 sx={buttonStyles}
                                 variant={viewController.selectedItem === SelectedItem.USERS ? "contained" : "text"}
                                 color={viewController.selectedItem === SelectedItem.USERS ? "primary" : "secondary"}>Users</Button>
-                        <Button onClick={viewController.onMetricsClick}
-                                sx={buttonStyles}
-                                variant={viewController.selectedItem === SelectedItem.METRICS ? "contained" : "text"}
-                                color={viewController.selectedItem === SelectedItem.METRICS ? "primary" : "secondary"}>Metrics</Button>
                         <Button onClick={viewController.onSettingsClick}
                                 sx={buttonStyles}
                                 variant={viewController.selectedItem === SelectedItem.SETTINGS ? "contained" : "text"}

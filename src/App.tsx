@@ -7,7 +7,7 @@ import {darkTheme} from "src/shared/theme";
 import {ThemeProvider} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import initialize from "src/core/config/Config";
-import {DASHBOARD_ENDPOINT, METRICS_ENDPOINT, SETTINGS_ENDPOINT, SIGN_IN_ENDPOINT, USERS_ENDPOINT} from "src/shared";
+import {DASHBOARD_ENDPOINT, SETTINGS_ENDPOINT, SIGN_IN_ENDPOINT, USERS_ENDPOINT} from "src/shared";
 
 initialize();
 
@@ -19,7 +19,6 @@ function App() {
                 <Routes>
                     <Route path={SIGN_IN_ENDPOINT} element={<SignInPage/>}/>
                     <Route path={USERS_ENDPOINT} element={<UsersPage/>}/>
-                    <Route path={METRICS_ENDPOINT} element={<UsersPage/>}/>
                     <Route path={DASHBOARD_ENDPOINT} element={<UsersPage/>}/>
                     <Route path={SETTINGS_ENDPOINT} element={<UsersPage/>}/>
                 </Routes>
