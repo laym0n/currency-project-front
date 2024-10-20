@@ -1,0 +1,9 @@
+node_modules
+
+*.css.map
+
+dist
+/.idea/
+/src/api/api-back/generated/
+
+.env.local
