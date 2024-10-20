@@ -1,7 +1,7 @@
 import React from "react";
 
 import {Stack} from "@mui/material";
-import useMainViewController from "src/pages/users/UsersViewController";
+import useUsersViewController from "src/pages/users/UsersViewController";
 import {Layout} from "src/pages/layout";
 import {SnackbarProvider} from "notistack";
 import {UsersTable} from "src/pages/users/UsersTable";
@@ -18,7 +18,7 @@ export function UsersPage() {
 }
 
 export function SearchPageContent() {
-    useMainViewController();
+    useUsersViewController();
     return (
         <Stack>
             <Typography textAlign="center" variant="h1">Users</Typography>

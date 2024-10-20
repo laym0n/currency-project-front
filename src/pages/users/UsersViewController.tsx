@@ -1,7 +1,7 @@
 export type UsersViewController = {}
 
-const useMainViewController: () => UsersViewController = () => {
+const useUsersViewController: () => UsersViewController = () => {
     return {} as UsersViewController;
 }
 
-export default useMainViewController;
+export default useUsersViewController;
