@@ -1,6 +1,6 @@
 import {FindUsersParameters, UserService} from "./UserService";
 import {injectable} from "inversify";
-import {GetUsersResponse, UsersClient} from "/@/components/api/api-back/generated";
+import {GetUsersResponse, UsersClient} from "src/api/api-back/generated";
 
 // @ts-ignore
 @injectable()
