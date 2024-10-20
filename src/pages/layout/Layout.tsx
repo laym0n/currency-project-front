@@ -30,8 +30,8 @@ function LayoutContent(properties: LayoutProperties) {
               }}
               padding={theme => theme.spacing(1)}
               justifyContent="center"
-              alignItems="center">
-            <Grid size="auto">
+              alignItems="flex-start">
+            <Grid size="auto" flexDirection="column" justifyContent="flex-start">
                 <Menu/>
             </Grid>
             <Grid size="grow">

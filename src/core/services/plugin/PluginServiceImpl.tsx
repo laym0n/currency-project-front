@@ -10,7 +10,13 @@ export class PluginServiceImpl implements PluginService {
     }
 
     find(type?: PluginType): Promise<GetPluginsResponse> {
-        return Promise.resolve({} as GetPluginsResponse);
+        return Promise.resolve({
+            plugins: [{
+                id: "id",
+                type: PluginType.AUTHENTICATION,
+                host: "host"
+            }]
+        } as GetPluginsResponse);
     }
 
     update(request: PluginDto): Promise<PluginDto> {
