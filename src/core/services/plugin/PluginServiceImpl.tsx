@@ -1,29 +1,23 @@
 import {PluginService} from "./PluginService";
 import {injectable} from "inversify";
-import {GetPluginsResponse, PluginDto, PluginType} from "src/api/api-back/generated";
+import {GetPluginsResponse, PluginDto, PluginsClient, PluginType} from "src/api/api-back/generated";
 
 // @ts-ignore
 @injectable()
 export class PluginServiceImpl implements PluginService {
     add(request: PluginDto): Promise<PluginDto> {
-        return Promise.resolve({} as PluginDto);
+        return PluginsClient.add(request);
     }
 
     find(type?: PluginType): Promise<GetPluginsResponse> {
-        return Promise.resolve({
-            plugins: [{
-                id: "id",
-                type: PluginType.AUTHENTICATION,
-                host: "host"
-            }]
-        } as GetPluginsResponse);
+        return PluginsClient.findPlugins(type);
     }
 
     update(request: PluginDto): Promise<PluginDto> {
-        return Promise.resolve({} as PluginDto);
+        return PluginsClient.update(request);
     }
 
     delete(id: string): Promise<void> {
-        return Promise.resolve();
+        return PluginsClient.delete(id);
     }
 }

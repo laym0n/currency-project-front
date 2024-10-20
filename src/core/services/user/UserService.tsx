@@ -7,4 +7,6 @@ export interface UserService {
 export type FindUsersParameters = {
     pageNumber: number,
     pageSize: number,
+    orderBy?: "balance",
+    order: "ASC" | "DESC"
 }
