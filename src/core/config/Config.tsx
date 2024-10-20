@@ -7,7 +7,7 @@ import {TYPES} from "src/core/config/Types";
 export default function initialize() {
     try {
         const authenticationService = diContainer.get<AuthenticationService>(TYPES.AuthenticationService);
-        openApiBack.BASE = process.env.REACT_APP_PLATFORM_BASE_URL as string;
+        openApiBack.BASE = process.env.REACT_APP_BACK_BASE_URL as string;
         authenticationService.initialize();
     } catch (e) {
         console.error(e)

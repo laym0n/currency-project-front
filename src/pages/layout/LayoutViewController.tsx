@@ -11,7 +11,7 @@ const useLayoutViewController: () => LayoutViewController = () => {
         if (!layoutContext.isAuthenticated) {
             navigate("/sign-in")
         }
-    }, [layoutContext.isAuthenticated]);
+    }, [navigate, layoutContext.isAuthenticated]);
     return {} as LayoutViewController;
 }
 

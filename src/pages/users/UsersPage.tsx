@@ -1,9 +1,11 @@
 import React from "react";
 
-import {Paper} from "@mui/material";
+import {Stack} from "@mui/material";
 import useMainViewController from "src/pages/users/UsersViewController";
 import {Layout} from "src/pages/layout";
 import {SnackbarProvider} from "notistack";
+import {UsersTable} from "src/pages/users/UsersTable";
+import Typography from "@mui/material/Typography";
 
 export function UsersPage() {
     return (
@@ -18,6 +20,9 @@ export function UsersPage() {
 export function SearchPageContent() {
     useMainViewController();
     return (
-        <Paper>some</Paper>
+        <Stack>
+            <Typography textAlign="center" variant="h1">Users</Typography>
+            <UsersTable/>
+        </Stack>
     );
 }

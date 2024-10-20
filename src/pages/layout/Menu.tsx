@@ -6,7 +6,6 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid2";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
 export function Menu() {
     let viewController = useMenuViewController();
     let buttonStyles: SxProps<Theme> = {

@@ -1,2 +1,2 @@
-export * from './main';
+export * from './users';
 export * from './signin';
