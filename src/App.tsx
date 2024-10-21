@@ -9,6 +9,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import initialize from "src/core/config/Config";
 import {DASHBOARD_ENDPOINT, SETTINGS_ENDPOINT, SIGN_IN_ENDPOINT, USERS_ENDPOINT} from "src/shared";
 import {SettingsPage} from "src/pages/settings";
+import {Layout} from "src/pages/layout";
 
 initialize();
 
@@ -22,6 +23,11 @@ function App() {
                     <Route path={USERS_ENDPOINT} element={<UsersPage/>}/>
                     <Route path={DASHBOARD_ENDPOINT} element={<UsersPage/>}/>
                     <Route path={SETTINGS_ENDPOINT} element={<SettingsPage/>}/>
+                    <Route path={"*"} element={
+                        <Layout>
+                            <h1>404</h1>
+                        </Layout>
+                    }/>
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>
