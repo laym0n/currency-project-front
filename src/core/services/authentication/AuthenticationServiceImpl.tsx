@@ -1,36 +1,24 @@
-import {AuthenticationRequest, AuthenticationService, UserInfoDto} from "./AuthenticationService";
+import {AuthenticationRequest, AuthenticationService} from "./AuthenticationService";
 import {injectable} from "inversify";
+import {AuthClient} from "src/api/api-auth/generated";
 
 // @ts-ignore
 @injectable()
 export class AuthenticationServiceImpl implements AuthenticationService {
-    private isAuthenticated = true;
+    private IS_AUTHENTICATED = "IS_AUTHENTICATED"
 
     authenticate(request: AuthenticationRequest): Promise<void> {
-        return Promise.resolve(undefined);
-    }
-
-    getUser(): UserInfoDto {
-        return {login: "login"} as UserInfoDto;
-    }
-
-    initialize(): void {
+        return AuthClient.auth(request).then(value => {
+            localStorage[this.IS_AUTHENTICATED] = true
+        })
     }
 
     logOut(): void {
-        this.isAuthenticated = false;
-    }
-
-    refreshAuthorize(): Promise<void> {
-        return Promise.resolve(undefined);
-    }
-
-    tryRefreshAuthorize(): Promise<void> {
-        return Promise.resolve(undefined);
+        localStorage[this.IS_AUTHENTICATED] = false
     }
 
     userAuthenticated(): boolean {
-        return this.isAuthenticated;
+        return localStorage[this.IS_AUTHENTICATED];
     }
 
 }

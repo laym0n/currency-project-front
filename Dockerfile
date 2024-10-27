@@ -11,5 +11,6 @@ RUN npm install
 COPY . ./
 
 RUN npm run generate-back-api
+RUN npm run generate-auth-api
 
 CMD ["npm", "start"]

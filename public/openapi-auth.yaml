@@ -1,0 +1,34 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8082
+paths:
+  /api/sign-in:
+    post:
+      tags:
+        - Auth
+      operationId: auth
+      summary: аутентификация
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthenticateDto'
+      responses:
+        '200':
+          description: Успешная аутентификация
+components:
+  schemas:
+    AuthenticateDto:
+      type: object
+      description: dto для аутентификации
+      properties:
+        login:
+          type: string
+        password:
+          type: string
+      required:
+        - login
+        - password
