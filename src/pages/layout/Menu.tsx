@@ -21,10 +21,6 @@ export function Menu() {
                       icon={<AccountCircleIcon/>} label={viewController.login}/>
                 <Paper>
                     <Stack>
-                        <Button onClick={viewController.onDashboardClick}
-                                sx={buttonStyles}
-                                variant={viewController.selectedItem === SelectedItem.DASHBOARD ? "contained" : "text"}
-                                color={viewController.selectedItem === SelectedItem.DASHBOARD ? "primary" : "secondary"}>Dashboard</Button>
                         <Button onClick={viewController.onUsersClick}
                                 sx={buttonStyles}
                                 variant={viewController.selectedItem === SelectedItem.USERS ? "contained" : "text"}
